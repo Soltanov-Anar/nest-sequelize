@@ -7,7 +7,7 @@ import { CreateUserDTO } from './dto/create-user-dto';
 @ApiTags('Пользователи')
 @Controller('users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private usersService: UsersService) {}
 
   @ApiOperation({ summary: 'Создание пользователя' })
   @ApiResponse({ status: HttpStatus.OK, type: User })
@@ -16,7 +16,7 @@ export class UsersController {
     return this.usersService.createUser(createUserDTO);
   }
 
-  @ApiOperation({ summary: 'Полученить всех пользователей' })
+  @ApiOperation({ summary: 'Получить всех пользователей' })
   @ApiResponse({ status: HttpStatus.OK, type: [User] })
   @Get()
   getUsers() {

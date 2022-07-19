@@ -28,24 +28,15 @@ export class User extends Model<User, UserCreationAttrs> {
   email: string;
 
   @ApiProperty({ example: 'test123', description: 'Пароль' })
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
+  @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  @ApiProperty({ example: false, description: 'Пользователь забанен?' })
-  @Column({
-    type: DataType.BOOLEAN,
-    defaultValue: false,
-  })
+  @ApiProperty({ example: 'false', description: 'Пользователь забанен?' })
+  @Column({ type: DataType.BOOLEAN, defaultValue: false })
   banned: boolean;
 
-  @ApiProperty({ example: 'Нарушение базовых правил', description: 'Причина бана?' })
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
+  @ApiProperty({ example: 'Нарушение базовых правил', description: 'Причина блокировки' })
+  @Column({ type: DataType.STRING, allowNull: true })
   banReason: string;
 
   @BelongsToMany(() => Role, () => UserRoles)
