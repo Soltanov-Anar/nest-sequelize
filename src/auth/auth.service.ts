@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { UsersService } from 'src/users/users.service';
 import { User } from 'src/users/users.model';
-import { CreateUserDTO } from 'src/users/dto/create-user-dto';
+import { CreateUserDTO } from 'src/users/dto/create-user.dto';
 
 @Injectable()
 export class AuthService {
@@ -41,6 +41,6 @@ export class AuthService {
 
     if (user && passwordEquals) return user;
 
-    throw new UnauthorizedException({ message: 'Некооректный email или пароль' });
+    throw new UnauthorizedException({ message: 'Некорректный email или пароль' });
   }
 }
