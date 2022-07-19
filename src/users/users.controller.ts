@@ -1,10 +1,10 @@
-import { JwtAuthGuard } from './../auth/jwt-auth.guard';
 import { Body, Controller, Get, HttpStatus, Post, UseGuards } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { User } from './users.model';
 import { UsersService } from './users.service';
 import { Roles } from 'src/auth/roles-auth.decorator';
 import { RolesGuard } from 'src/auth/roles.guard';
+import { JwtAuthGuard } from './../auth/jwt-auth.guard';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { AddRoleDTO } from './dto/add-role.dto';
 import { BanUserDto } from './dto/ban-user.dto';
