@@ -1,0 +1,32 @@
+version: '3.0'
+
+services:
+  backend:
+    container_name: backend-nest
+    build: 
+      context: ./
+    depends_on:
+      - postgres
+    restart: always
+    ports:
+      - 5000:5000
+      - 9229:9229
+
+    command: npm run start:dev
+
+    env_file:
+      - .development.env
+
+  postgres: 
+    container_name: postgres
+    image: postgres:14.0-alpine
+    restart: always
+    env_file:
+      - .development.env
+    
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+    ports:
+      - 5432:5432
+    
