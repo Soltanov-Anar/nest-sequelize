@@ -1,7 +1,7 @@
 {
   "name": "nest-sequalize",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "nest-sequalize-postgres",
   "author": "Soltanov Anar",
   "private": true,
   "license": "UNLICENSED",
@@ -38,13 +38,15 @@
     "rxjs": "^7.2.0",
     "sequelize": "^6.21.3",
     "sequelize-typescript": "^2.1.3",
-    "swagger-ui-express": "^4.5.0"
+    "swagger-ui-express": "^4.5.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/swagger": "5.2.1",
     "@nestjs/testing": "^8.0.0",
+    "@nestjs/serve-static": "2.2.2",
     "@types/express": "^4.17.13",
     "@types/jest": "27.5.0",
     "@types/node": "^16.0.0",
